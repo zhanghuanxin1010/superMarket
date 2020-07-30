@@ -53,6 +53,22 @@ public class goodsTest {
         //then
         assertEquals(25,jifen);
     }
+    @Test
+    public void should_return_100_points_when_bug_peach_and_apple_and_WATERMELON_and_apple_given(){
+        //given
+        GoodsInfo goodsInfo1=new GoodsInfo(new BigDecimal("20"),"peach");
+        GoodsInfo goodsInfo2=new GoodsInfo(new BigDecimal("10"),"APPLE");
+        GoodsInfo goodsInfo3=new GoodsInfo(new BigDecimal("30"),"WATERMELON");
 
+        List<GoodsInfo> goodsList=new ArrayList();
+        goodsList.add(goodsInfo1);
+        goodsList.add(goodsInfo2);
+        goodsList.add(goodsInfo3);
+        userinfo user1=new userinfo(goodsList);
+        //when
+        int jifen=user1.BUYGoods();
+        //then
+        assertEquals(100,jifen);
+    }
 
 }
